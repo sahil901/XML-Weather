@@ -40,23 +40,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.windLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cityOutput
             // 
             this.cityOutput.BackColor = System.Drawing.Color.Transparent;
+            this.cityOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cityOutput.ForeColor = System.Drawing.Color.White;
-            this.cityOutput.Location = new System.Drawing.Point(21, 85);
+            this.cityOutput.Location = new System.Drawing.Point(50, 52);
             this.cityOutput.Name = "cityOutput";
-            this.cityOutput.Size = new System.Drawing.Size(71, 23);
+            this.cityOutput.Size = new System.Drawing.Size(148, 38);
             this.cityOutput.TabIndex = 22;
             this.cityOutput.Text = "City";
             // 
             // maxOutput
             // 
             this.maxOutput.BackColor = System.Drawing.Color.White;
-            this.maxOutput.Location = new System.Drawing.Point(117, 251);
+            this.maxOutput.Location = new System.Drawing.Point(119, 287);
             this.maxOutput.Name = "maxOutput";
             this.maxOutput.Size = new System.Drawing.Size(36, 13);
             this.maxOutput.TabIndex = 32;
@@ -65,7 +67,7 @@
             // 
             this.maxLabel.AutoSize = true;
             this.maxLabel.ForeColor = System.Drawing.Color.White;
-            this.maxLabel.Location = new System.Drawing.Point(21, 251);
+            this.maxLabel.Location = new System.Drawing.Point(23, 287);
             this.maxLabel.Name = "maxLabel";
             this.maxLabel.Size = new System.Drawing.Size(26, 13);
             this.maxLabel.TabIndex = 31;
@@ -74,7 +76,7 @@
             // minOutput
             // 
             this.minOutput.BackColor = System.Drawing.Color.White;
-            this.minOutput.Location = new System.Drawing.Point(117, 228);
+            this.minOutput.Location = new System.Drawing.Point(119, 310);
             this.minOutput.Name = "minOutput";
             this.minOutput.Size = new System.Drawing.Size(36, 13);
             this.minOutput.TabIndex = 30;
@@ -83,7 +85,7 @@
             // 
             this.minLabel.AutoSize = true;
             this.minLabel.ForeColor = System.Drawing.Color.White;
-            this.minLabel.Location = new System.Drawing.Point(21, 228);
+            this.minLabel.Location = new System.Drawing.Point(23, 310);
             this.minLabel.Name = "minLabel";
             this.minLabel.Size = new System.Drawing.Size(23, 13);
             this.minLabel.TabIndex = 29;
@@ -93,7 +95,7 @@
             // 
             this.currentOutput.BackColor = System.Drawing.Color.Transparent;
             this.currentOutput.ForeColor = System.Drawing.Color.White;
-            this.currentOutput.Location = new System.Drawing.Point(131, 206);
+            this.currentOutput.Location = new System.Drawing.Point(133, 263);
             this.currentOutput.Name = "currentOutput";
             this.currentOutput.Size = new System.Drawing.Size(22, 13);
             this.currentOutput.TabIndex = 28;
@@ -102,7 +104,7 @@
             // 
             this.tempLabel.AutoSize = true;
             this.tempLabel.ForeColor = System.Drawing.Color.White;
-            this.tempLabel.Location = new System.Drawing.Point(21, 206);
+            this.tempLabel.Location = new System.Drawing.Point(23, 263);
             this.tempLabel.Name = "tempLabel";
             this.tempLabel.Size = new System.Drawing.Size(104, 13);
             this.tempLabel.TabIndex = 26;
@@ -128,7 +130,7 @@
             this.forecastLabel.Name = "forecastLabel";
             this.forecastLabel.Size = new System.Drawing.Size(83, 28);
             this.forecastLabel.TabIndex = 41;
-            this.forecastLabel.Text = "7 Day";
+            this.forecastLabel.Text = "3 Day";
             this.forecastLabel.Click += new System.EventHandler(this.forecastLabel_Click);
             // 
             // label5
@@ -154,18 +156,30 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(24, 111);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 92);
+            this.pictureBox1.Size = new System.Drawing.Size(174, 129);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
+            // 
+            // windLabel
+            // 
+            this.windLabel.AutoSize = true;
+            this.windLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.windLabel.ForeColor = System.Drawing.Color.White;
+            this.windLabel.Location = new System.Drawing.Point(22, 336);
+            this.windLabel.Name = "windLabel";
+            this.windLabel.Size = new System.Drawing.Size(0, 20);
+            this.windLabel.TabIndex = 45;
             // 
             // CurrentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Controls.Add(this.windLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.forecastLabel);
@@ -199,5 +213,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label windLabel;
     }
 }

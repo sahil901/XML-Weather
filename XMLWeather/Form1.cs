@@ -29,6 +29,7 @@ namespace XMLWeather
             this.Controls.Add(cs);
         }
 
+        //api information
         private static void GetData()
         {
             WebClient client = new WebClient();
@@ -39,6 +40,7 @@ namespace XMLWeather
             client.DownloadFile("http://api.openweathermap.org/data/2.5/forecast/daily?q=Stratford,CA&mode=xml&units=metric&cnt=7&appid=3f2e224b815c0ed45524322e145149f0", "WeatherData7Day.xml");
         }
 
+        //current date weather forecast
         private void ExtractCurrent()
         {
             XmlDocument doc = new XmlDocument();
@@ -65,6 +67,7 @@ namespace XMLWeather
 
         }
 
+        //3 day weather forecast
         private void ExtractForecast()
         {
             XmlDocument doc = new XmlDocument();
@@ -74,7 +77,7 @@ namespace XMLWeather
             XmlNodeList tempList = doc.GetElementsByTagName("temperature");
             XmlNodeList tempmaxList = doc.GetElementsByTagName("temperature");
             XmlNodeList tempminList = doc.GetElementsByTagName("temperature");
-            XmlNodeList windSpeed = doc.GetElementsByTagName("clouds");
+            XmlNodeList cloudsList = doc.GetElementsByTagName("clouds");
 
             for (int i = 1; i < tempList.Count; i++)
             {
@@ -83,6 +86,7 @@ namespace XMLWeather
                 d.currentTemp = tempList[i].Attributes["day"].Value;
                 d.tempHigh = tempmaxList[i].Attributes["max"].Value;
                 d.tempLow = tempminList[i].Attributes["min"].Value;
+                d.condition = cloudsList[i].Attributes["value"].Value;
 
                 days.Add(d);
             }
